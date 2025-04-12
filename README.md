@@ -5,7 +5,7 @@ The Evolution of Porsche 911
 ## Features
 This interactive website is a visual journey through the iconic evolution of the Porsche 911 — one of the most legendary sports cars in automotive history. Blending compelling storytelling with sleek animations, the project aims to celebrate the legacy, performance, and cultural significance of the 911 across generations.
 
-## 🧭 Project Scope
+## Project Scope
 This project aims to build an interactive web experience titled **“Evolution of the Porsche 911”**, which showcases the transformation of this iconic sports car across six decades. The site will feature:
 
 - A **Hero Section** introducing the Porsche 911 and project goals  
