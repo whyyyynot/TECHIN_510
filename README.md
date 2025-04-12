@@ -56,9 +56,9 @@ This project aims to build an interactive web experience titled **“Evolution o
 ## Contact Info
 
 - **Hanyang Wang**  
-  - Role: UX Designer & Project Lead  
-  - Email: hanyaw3@uw.edu  
-  - GitHub: [@whyyyynot](https://github.com/whyyyynot)
+  - Role: UI/UX Designer & Developer  
+  - Email: lliang51@uw.edu  
+  - GitHub: [@LIANGLW-d](https://github.com/LIANGLW-d)
 
 ## Getting Started
 ```bash
