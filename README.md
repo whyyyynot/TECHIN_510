@@ -14,11 +14,9 @@ This project aims to build an interactive web experience titled **“Evolution o
 - A **“Build the Evolution” Game** allowing users to mix and match design elements (e.g., front bumper from 1974 + taillights from 2024)  
 - A **“What-if 911 Generator”** to render a personalized final image of the custom build and generate a descriptive label
 
-> ✨ The experience blends education, design, and user interaction to help audiences explore how product evolution reflects both heritage and innovation.
-
 ---
 
-## 🎯 Target Users
+## Target Users
 
 - **Car enthusiasts** who follow the Porsche brand or automotive history  
 - **Design and engineering students** learning about long-term product evolution  
@@ -27,7 +25,7 @@ This project aims to build an interactive web experience titled **“Evolution o
 
 ---
 
-## ✨ Features
+## Features
 
 - **Hero Section**: Bold visual and textual intro to the experience  
 - **Interactive Timeline**: Scrollable UI from 1963 to 2024 with generation highlights  
@@ -38,7 +36,7 @@ This project aims to build an interactive web experience titled **“Evolution o
 
 ---
 
-## 📆 Timeline
+## Timeline
 
 | Week | Milestone |
 |------|-----------|
@@ -55,7 +53,7 @@ This project aims to build an interactive web experience titled **“Evolution o
 
 ---
 
-## 👥 Contact Info
+## Contact Info
 
 - **Hanyang Wang**  
   - Role: UX Designer & Project Lead  
@@ -67,4 +65,3 @@ This project aims to build an interactive web experience titled **“Evolution o
 git clone https://github.com/whyyyynot/TECHIN_510.git
 cd TECHIN_510
 
-##
