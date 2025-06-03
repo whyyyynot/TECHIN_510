@@ -1,0 +1,17 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs and env
+*.log
+.env
+
+# Python / Node / etc.
+__pycache__/
+node_modules/
+dist/
+build/
+
+# Editor configs
+.vscode/
+.idea/

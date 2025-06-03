@@ -1,0 +1,95 @@
+/* Overview Menu Styles (Desktop Only) */
+@media (min-width: 769px) {
+  .overview-menu-btn {
+    position: absolute;
+    top: 4rem;
+    left: 2.5rem;
+    z-index: 2000;
+    background: rgba(40, 40, 40, 0.92);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.4rem;
+    min-width: unset;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+  }
+  .overview-menu-btn:hover, .overview-menu-btn:focus {
+    background: #222;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    transform: translateY(-2px) scale(1.04);
+  }
+  .overview-menu-btn.sticky-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2.5rem;
+    z-index: 3000;
+  }
+  .overview-menu-panel {
+    position: absolute;
+    top: 2.7rem;
+    left: 0;
+    background: rgba(30, 30, 30, 0.98);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    padding: 1.2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 2100;
+    min-width: 180px;
+    width: max-content;
+  }
+  .overview-menu-panel.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+  .overview-menu-btn.sticky-btn + .overview-menu-panel {
+    position: fixed;
+    top: 4.7rem;
+    left: 2.5rem;
+    z-index: 3100;
+  }
+  .overview-menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s;
+  }
+  .overview-menu-link:hover, .overview-menu-link:focus {
+    background: #ffd70022;
+    color: #ffd700;
+  }
+  .overview-menu-link-icon {
+    font-size: 1.3rem;
+  }
+  .overview-menu-panel.open.sticky-panel {
+    position: fixed;
+    left: 2.5rem;
+    z-index: 3100;
+    /* top will be set by JS */
+  }
+} 

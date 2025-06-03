@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evolution of Porsche 911</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/overview-menu.css">
+    <link rel="stylesheet" href="css/year-wheel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <video autoplay muted playsinline loop id="hero-video" class="hero-bg-video">
+            <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <div class="hero-top-bar">
+                <button class="floating-overview-btn" id="overview-btn" aria-label="Overview Menu">Overview</button>
+                <div class="hero-logo"><img src="assets/porsche-911-seeklogo.png" alt="Logo"></div>
+            </div>
+            <div class="hero-headline">
+                <h1>
+                    <span class="headline-light">A TALE OF</span>
+                    <span class="headline-bold"> NOW </span>
+                    <span class="headline-light headline-and">AND</span><br>
+                    <span class="headline-bold headline-then">THEN</span>
+                </h1>
+            </div>
+            <div class="hero-bottom-bar">
+                <span class="scroll-hint">SCROLL TO SEE FULL COLLECTION</span>
+                <a class="video-preview-btn" href="https://newstv.porsche.com/en/embed/210213.html" target="_blank" rel="noopener">
+                    <img src="assets/cover page.jpg" alt="Preview" class="preview-thumb">
+                    <span>Discover<br>full video</span>
+                    <span class="play-icon">&#9654;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <button class="hero-btn" id="mute-btn" aria-label="Mute/Unmute Video"><img id="mute-icon" class="mute-icon-img" src="assets/volume_mute.svg" alt="Mute/Unmute" style="height: 24px; width: 24px;"></button>
+
+    <!-- Interactive Timeline -->
+    <section id="timeline" class="timeline-section">
+        <h2>The Evolution Timeline</h2>
+        <div class="timeline-container">
+            <!-- Timeline items will be dynamically generated -->
+        </div>
+    </section>
+
+    <!-- Engine Sound Slider -->
+    <section id="engine-sounds" class="engine-section">
+        <h2>The Sound and Shape of Legacy</h2>
+        <!-- Year Wheel Picker and Video Sync -->
+        <div class="year-wheel-container">
+            <div class="year-wheel" id="year-wheel"></div>
+            <div class="year-video-container">
+                <video id="year-video" muted playsinline></video>
+            </div>
+        </div>
+        <!-- End Year Wheel Picker -->
+        <!-- Sound slider and audio player removed -->
+    </section>
+
+    <!-- Build the Evolution Game -->
+    <section id="build-game" class="game-section">
+        <h2>Build Your Own Evolution</h2>
+        <div class="game-container">
+            <div class="parts-selection">
+                <!-- Parts selection interface -->
+            </div>
+            <div class="preview-area">
+                <!-- Preview of the custom build -->
+            </div>
+        </div>
+    </section>
+
+    <!-- What-if Generator -->
+    <section id="what-if" class="generator-section">
+        <h2>Your Custom 911</h2>
+        <div class="generator-container">
+            <div class="final-preview">
+                <!-- Final composite image -->
+            </div>
+            <div class="description">
+                <!-- Generated description -->
+            </div>
+            <button class="share-button">Share Your Creation</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Created by Hanyang Wang | TECHIN 510 Project</p>
+        <p>Contact: <a href="mailto:lliang51@uw.edu">lliang51@uw.edu</a></p>
+    </footer>
+
+    <div class="overview-panel" id="overview-panel">
+        <a href="#hero" class="overview-link"><span class="overview-link-icon">🏠</span> Hero</a>
+        <a href="#timeline" class="overview-link"><span class="overview-link-icon">��</span> Timeline</a>
+        <a href="#engine-sounds" class="overview-link"><span class="overview-link-icon">🔊</span> Engine Sounds</a>
+        <a href="#build-game" class="overview-link"><span class="overview-link-icon">🛠️</span> Build Game</a>
+        <a href="#what-if" class="overview-link"><span class="overview-link-icon">✨</span> What-if Generator</a>
+    </div>
+
+    <button class="overview-menu-btn" aria-label="Overview Menu">Overview</button>
+    <div class="overview-menu-panel">
+        <a href="#hero" class="overview-menu-link">Hero</a>
+        <a href="#timeline" class="overview-menu-link">Timeline</a>
+        <a href="#engine-sounds" class="overview-menu-link">Engine Sounds</a>
+        <a href="#build-game" class="overview-menu-link">Build Game</a>
+        <a href="#what-if" class="overview-menu-link">What-if Generator</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/overview-menu.js"></script>
+    <script src="js/year-wheel.js"></script>
+    <script src="js/mute-btn.js"></script>
+</body>
+</html> 
