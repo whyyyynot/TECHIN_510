@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add smooth scrolling
     initSmoothScrolling();
+
+    // Force scroll to top on page load to prevent browser restoring previous position
+    // window.scrollTo(0, 0);
+});
+
+// Force scroll to top after the entire page has loaded (including resources)
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
 });
 
 // Hero Section
