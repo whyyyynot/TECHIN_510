@@ -1,1 +1,80 @@
-// JavaScript for the AI History Q&A section\n\ndocument.addEventListener(\'DOMContentLoaded\', () => {\n    const questionInput = document.getElementById(\'history-question\');\n    const askButton = document.getElementById(\'ask-history-btn\');\n    const aiResponseDiv = document.getElementById(\'ai-response\');\n    const loadingDiv = document.getElementById(\'ai-loading\');\n\n    // Check if all elements are found\n    if (!questionInput || !askButton || !aiResponseDiv || !loadingDiv) {\n        console.error(\'AI History elements not found in the DOM.\');\n        return;\n    }\n\n    // Add event listener to the Ask button\n    askButton.addEventListener(\'click\', handleAskQuestion);\n\n    // Optional: Allow pressing Enter key in the input field to ask\n    questionInput.addEventListener(\'keypress\', (event) => {\n        if (event.key === \'Enter\') {\n            event.preventDefault(); // Prevent default form submission if it were in a form\n            handleAskQuestion();\n        }\n    });\n\n    // Function to handle the question asking process\n    async function handleAskQuestion() {\n        const question = questionInput.value.trim();\n\n        if (!question) {\n            alert(\'Please enter a question.\');\n            return;\n        }\n\n        // Clear previous response and show loading indicator\n        aiResponseDiv.innerHTML = \'\';\n        loadingDiv.style.display = \'block\';\n        askButton.disabled = true; // Disable button while loading\n\n        try {\n            // --- Backend Integration ---\n            // This is where you would make a request to your backend API endpoint.\n            // The backend needs to:\n            // 1. Receive the question.\n            // 2. Send the question to an AI model (like Gemini, OpenAI, etc.)\n            // 3. Get the AI's response about Porsche 911 history.\n            // 4. Return the AI's response to the frontend.\n            //\n            // Replace \'/api/ask-porsche-ai\' with the actual URL of your backend endpoint.\n            const response = await fetch(\'/api/ask-porsche-ai\', {\n                method: \'POST\',\n                headers: {\n                    \'Content-Type\': \'application/json\',\n                },\n                body: JSON.stringify({ question: question }),\n            });\n\n            if (!response.ok) {\n                throw new Error(`HTTP error! status: ${response.status}`);\n            }\n\n            const data = await response.json();\n\n            // Display the AI's response\n            if (data.answer) {\n                aiResponseDiv.innerHTML = \`<p>\${data.answer}</p>\`;\n            } else {\n                aiResponseDiv.innerHTML = \'<p>Sorry, I could not get an answer.</p>\';\n            }\n\n        } catch (error) {\n            console.error(\'Error fetching AI response:\', error);\n            aiResponseDiv.innerHTML = \'<p>Error getting response. Please try again later.</p>\';\n        } finally {\n            // Hide loading indicator and re-enable button\n            loadingDiv.style.display = \'none\';\n            askButton.disabled = false;\n        }\n    }\n}); 
+// JavaScript for the AI History Q&A section
+
+document.addEventListener('DOMContentLoaded', () => {
+    const questionInput = document.getElementById('history-question');
+    const askButton = document.getElementById('ask-history-btn');
+    const aiResponseDiv = document.getElementById('ai-response');
+    const loadingDiv = document.getElementById('ai-loading');
+
+    // Check if all elements are found
+    if (!questionInput || !askButton || !aiResponseDiv || !loadingDiv) {
+        console.error('AI History elements not found in the DOM.');
+        return;
+    }
+
+    // Add event listener to the Ask button
+    askButton.addEventListener('click', handleAskQuestion);
+
+    // Optional: Allow pressing Enter key in the input field to ask
+    questionInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default form submission if it were in a form
+            handleAskQuestion();
+        }
+    });
+
+    // Function to handle the question asking process
+    async function handleAskQuestion() {
+        const question = questionInput.value.trim();
+
+        if (!question) {
+            alert('Please enter a question.');
+            return;
+        }
+
+        // Clear previous response and show loading indicator
+        aiResponseDiv.innerHTML = '';
+        loadingDiv.style.display = 'block';
+        askButton.disabled = true; // Disable button while loading
+
+        try {
+            // --- Backend Integration ---
+            // This is where you would make a request to your backend API endpoint.
+            // The backend needs to:
+            // 1. Receive the question.
+            // 2. Send the question to an AI model (like Gemini, OpenAI, etc.)
+            // 3. Get the AI's response about Porsche 911 history.
+            // 4. Return the AI's response to the frontend.
+            //
+            // Replace '/api/ask-porsche-ai' with the actual URL of your backend endpoint.
+            const response = await fetch('http://localhost:5000/api/ask-porsche-ai', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // Display the AI's response
+            if (data.answer) {
+                aiResponseDiv.innerHTML = `<p>${data.answer}</p>`;
+            } else {
+                aiResponseDiv.innerHTML = '<p>Sorry, I could not get an answer.</p>';
+            }
+
+        } catch (error) {
+            console.error('Error fetching AI response:', error);
+            aiResponseDiv.innerHTML = '<p>Error getting response. Please try again later.</p>';
+        } finally {
+            // Hide loading indicator and re-enable button
+            loadingDiv.style.display = 'none';
+            askButton.disabled = false;
+        }
+    }
+}); 

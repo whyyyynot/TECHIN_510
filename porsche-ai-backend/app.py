@@ -23,8 +23,8 @@ if not API_KEY:
 try:
     # Use the hardcoded API_KEY directly for configuration
     genai.configure(api_key=API_KEY)
-    # Choose the model you want to use. 'gemini-pro' is a common choice for text generation.
-    model = genai.GenerativeModel('gemini-pro')
+    # Choose the model you want to use. Change 'gemini-pro' to a currently supported model.
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
 except Exception as e:
     print(f"Error configuring Gemini API: {e}")
     # Handle cases where API configuration fails (e.g., invalid key)
