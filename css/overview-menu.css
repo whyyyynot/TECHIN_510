@@ -51,21 +51,33 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px) scale(0.98);
-    transition: opacity 0.25s, transform 0.25s;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
     z-index: 2100;
     min-width: 180px;
     width: max-content;
+    overflow: hidden;
   }
   .overview-menu-panel.open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scale(1);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
   .overview-menu-btn.sticky-btn + .overview-menu-panel {
     position: fixed;
     top: 4.7rem;
     left: 2.5rem;
     z-index: 3100;
+  }
+  .overview-menu-panel.open .overview-menu-link {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .overview-menu-panel .overview-menu-link {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   }
   .overview-menu-link {
     color: #fff;
@@ -77,7 +89,7 @@
     gap: 0.7rem;
     padding: 0.4rem 0.8rem;
     border-radius: 8px;
-    transition: background 0.18s, color 0.18s;
+    transition: background 0.18s ease, color 0.18s ease;
   }
   .overview-menu-link:hover, .overview-menu-link:focus {
     background: #ffd70022;
@@ -92,4 +104,10 @@
     z-index: 3100;
     /* top will be set by JS */
   }
+  .overview-menu-panel.open .overview-menu-link:nth-child(1) { transition-delay: 0.05s; }
+  .overview-menu-panel.open .overview-menu-link:nth-child(2) { transition-delay: 0.10s; }
+  .overview-menu-panel.open .overview-menu-link:nth-child(3) { transition-delay: 0.15s; }
+  .overview-menu-panel.open .overview-menu-link:nth-child(4) { transition-delay: 0.20s; }
+  .overview-menu-panel.open .overview-menu-link:nth-child(5) { transition-delay: 0.25s; }
+  .overview-menu-panel.open .overview-menu-link:nth-child(6) { transition-delay: 0.30s; }
 } 

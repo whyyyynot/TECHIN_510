@@ -231,28 +231,10 @@ h2 {
 
 /* Timeline Section */
 .timeline-section {
-    background-color: white;
-}
-
-/* Engine Sound Section */
-.engine-section {
-    background-color: var(--secondary-color);
+    background-color: black;
+    min-height: unset;
+    padding: 0;
     color: white;
-}
-
-.sound-slider {
-    width: 100%;
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-.year-slider {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.sound-display {
-    text-align: center;
 }
 
 /* Game Section */
@@ -302,7 +284,7 @@ footer {
 }
 
 footer a {
-    color: var(--accent-color);
+    color: white;
     text-decoration: none;
 }
 
@@ -596,13 +578,111 @@ body, p, .body-text {
     }
 }
 
-#engine-sounds h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
+#timeline h2 {
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 3rem;
     text-align: center;
-    margin: 0 auto 2.5rem auto;
-    color: #fff;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    font-family: 'Permanent Marker', cursive, sans-serif;
+}
+
+/* Porsche 911 AI History Section */
+.ai-history-section {
+    background-color: var(--secondary-color); /* Dark background */
+    color: white;
+}
+
+.ai-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #222; /* Slightly lighter dark for container */
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.question-input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#history-question {
+    flex-grow: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #333; /* Dark input background */
+    color: white;
+    outline: none;
+}
+
+#history-question::placeholder {
+    color: #ccc;
+}
+
+#ask-history-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--cta-yellow); /* Highlight color */
+    color: var(--primary-color); /* Dark text */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#ask-history-btn:hover {
+    background-color: #e6c300; /* Slightly darker yellow on hover */
+}
+
+.ai-response {
+    text-align: left;
+    padding: 1rem;
+    background-color: #333; /* Darker background for response */
+    border-radius: 8px;
+    min-height: 100px; /* Give it some minimum height */
+    overflow-y: auto; /* Add scroll if content is long */
+}
+
+.ai-response p {
+    color: #eee; /* Light text color */
+    line-height: 1.6;
+}
+
+.ai-loading {
+    margin-top: 1rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Engine Sound Section */
+.engine-section {
+    background-color: black;
+    color: white;
+}
+
+.engine-section h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    margin-top: -2rem;
+}
+
+/* Build Game Section */
+.build-game-section {
+    background-color: var(--background-color);
+}
+
+.build-game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 } 

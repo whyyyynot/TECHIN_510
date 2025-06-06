@@ -1,35 +1,35 @@
-// Mute/Unmute button logic for hero video (independent)
 document.addEventListener('DOMContentLoaded', () => {
-    const muteBtn = document.getElementById('mute-btn');
+    const muteButton = document.getElementById('mute-btn');
     const muteIcon = document.getElementById('mute-icon');
     const heroVideo = document.getElementById('hero-video');
-    // Add a flag to track if the mute button was used
-    window.muteBtnUsed = false; // Expose globally if needed by other scripts
-    if (muteBtn && muteIcon && heroVideo) {
-        function updateMuteIcon() {
-            muteIcon.src = heroVideo.muted ? 'assets/volume_mute.svg' : 'assets/volume_up.svg';
-            muteIcon.alt = heroVideo.muted ? 'Muted' : 'Unmuted';
-        }
-        muteBtn.addEventListener('click', () => {
-            heroVideo.muted = !heroVideo.muted;
-            updateMuteIcon();
-            window.muteBtnUsed = true; // Set flag when mute button is used
-            if (!heroVideo.muted) heroVideo.play();
-        });
-        updateMuteIcon();
+
+    if (!muteButton || !muteIcon || !heroVideo) {
+        console.error('Mute button, mute icon, or hero video not found!');
+        return;
     }
-    // Ensure video tries to play on load (muted, for autoplay)
-    if (heroVideo) {
-        heroVideo.play().catch(() => {});
-        // Unmute and play after first user interaction
-        function enableSound() {
-            heroVideo.muted = false;
-            heroVideo.volume = 1.0;
-            heroVideo.play();
-            window.removeEventListener('click', enableSound);
-            window.removeEventListener('keydown', enableSound);
+
+    const volumeUpIcon = 'assets/volume_up.svg';
+    const volumeMuteIcon = 'assets/volume_mute.svg';
+
+    // Function to update the icon based on video muted state
+    function updateMuteButtonIcon() {
+        if (heroVideo.muted) {
+            muteIcon.src = volumeMuteIcon;
+            muteIcon.alt = 'Unmute Video';
+        } else {
+            muteIcon.src = volumeUpIcon;
+            muteIcon.alt = 'Mute Video';
         }
-        window.addEventListener('click', enableSound);
-        window.addEventListener('keydown', enableSound);
     }
+
+    // Set initial icon state
+    updateMuteButtonIcon();
+
+    // Add click event listener to the button to toggle mute and update icon
+    muteButton.addEventListener('click', () => {
+        heroVideo.muted = !heroVideo.muted;
+    });
+
+    // Update icon if the video's muted state changes (e.g., by clicking the button)
+    heroVideo.addEventListener('volumechange', updateMuteButtonIcon);
 }); 

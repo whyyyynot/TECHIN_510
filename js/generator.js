@@ -9,7 +9,7 @@ canvas.height = 600;
 // Initialize the generator
 function initGenerator() {
     const generatorContainer = document.querySelector('.generator-container');
-    const finalPreview = document.querySelector('.final-preview');
+    const finalPreview = document.querySelector('.preview-area');
     
     // Add canvas to the preview area
     finalPreview.appendChild(canvas);

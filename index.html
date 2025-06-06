@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/overview-menu.css">
     <link rel="stylesheet" href="css/year-wheel.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Hero Section -->
@@ -45,13 +47,18 @@
 
     <!-- Interactive Timeline -->
     <section id="timeline" class="timeline-section">
-        <h2>The Evolution Timeline</h2>
-        <div class="timeline-container">
-            <!-- Timeline items will be dynamically generated -->
-        </div>
+        <img src="assets/1963.png" alt="1963 Porsche Innovation" class="timeline-year-image img-1963">
+        <img src="assets/1967.png" alt="1967 Porsche Innovation" class="timeline-year-image img-1967">
+        <img src="assets/1972.png" alt="1972 Porsche Innovation" class="timeline-year-image img-1972">
+        <img src="assets/1976.png" alt="1976 Porsche Innovation" class="timeline-year-image img-1976">
+        <img src="assets/1990.png" alt="1990 Porsche Innovation" class="timeline-year-image img-1990">
+        <img src="assets/1993.png" alt="1993 Porsche Innovation" class="timeline-year-image img-1993">
+        <img src="assets/2001.png" alt="2001 Porsche Innovation" class="timeline-year-image img-2001">
+        <img src="assets/2011-1.png" alt="2011 Porsche Innovation 1" class="timeline-year-image img-2011-1">
+        <img src="assets/2011-2.png" alt="2011 Porsche Innovation 2" class="timeline-year-image img-2011-2">
     </section>
 
-    <!-- Engine Sound Slider -->
+    <!-- Year Wheel and Video Section -->
     <section id="engine-sounds" class="engine-section">
         <h2>The Sound and Shape of Legacy</h2>
         <!-- Year Wheel Picker and Video Sync -->
@@ -62,7 +69,6 @@
             </div>
         </div>
         <!-- End Year Wheel Picker -->
-        <!-- Sound slider and audio player removed -->
     </section>
 
     <!-- Build the Evolution Game -->
@@ -78,17 +84,18 @@
         </div>
     </section>
 
-    <!-- What-if Generator -->
-    <section id="what-if" class="generator-section">
-        <h2>Your Custom 911</h2>
-        <div class="generator-container">
-            <div class="final-preview">
-                <!-- Final composite image -->
+    <!-- Porsche 911 AI History Section -->
+    <section id="what-if" class="ai-history-section">
+        <h2>Ask the Porsche 911 AI Historian</h2>
+        <div class="ai-history-container">
+            <div class="question-input">
+                <input type="text" id="history-question" placeholder="Ask anything about Porsche 911 history...">
+                <button id="ask-history-btn">Ask</button>
             </div>
-            <div class="description">
-                <!-- Generated description -->
+            <div class="ai-response" id="ai-response">
+                <p>Your AI-powered insights will appear here.</p>
             </div>
-            <button class="share-button">Share Your Creation</button>
+            <div class="ai-loading" id="ai-loading" style="display: none;">Loading...</div>
         </div>
     </section>
 
@@ -115,11 +122,12 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/timeline.js"></script>
     <script src="js/game.js"></script>
     <script src="js/generator.js"></script>
-    <script src="js/overview-menu.js"></script>
+    <script src="js/overview-btn.js"></script>
     <script src="js/year-wheel.js"></script>
     <script src="js/mute-btn.js"></script>
+    <script src="js/sticky-buttons.js"></script>
+    <script src="js/ai-history.js"></script>
 </body>
 </html> 
