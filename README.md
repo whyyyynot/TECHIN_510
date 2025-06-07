@@ -6,13 +6,13 @@ The Evolution of Porsche 911
 This interactive website is a visual journey through the iconic evolution of the Porsche 911 — one of the most legendary sports cars in automotive history. Blending compelling storytelling with sleek animations, the project aims to celebrate the legacy, performance, and cultural significance of the 911 across generations.
 
 ## Project Scope
-This project aims to build an interactive web experience titled **“Evolution of the Porsche 911”**, which showcases the transformation of this iconic sports car across six decades. The site will feature:
+This project aims to build an interactive web experience titled **"Evolution of the Porsche 911"**, which showcases the transformation of this iconic sports car across six decades. The site will feature:
 
 - A **Hero Section** introducing the Porsche 911 and project goals  
 - An **Interactive Timeline** covering every generation from 1963 to 2024, complete with visuals and historic details  
 - An **Engine Sound Slider** that lets users hear engine audio samples by dragging through the years  
-- A **“Build the Evolution” Game** allowing users to mix and match design elements (e.g., front bumper from 1974 + taillights from 2024)  
-- A **“What-if 911 Generator”** to render a personalized final image of the custom build and generate a descriptive label
+- A **"Build the Evolution" Game** allowing users to mix and match design elements (e.g., front bumper from 1974 + taillights from 2024)  
+- A **"What-if 911 Generator"** to render a personalized final image of the custom build and generate a descriptive label
 
 ---
 
@@ -32,7 +32,7 @@ This project aims to build an interactive web experience titled **“Evolution o
 - **Audio Slider**: Drag to hear engine sounds by year  
 - **Build the Evolution Game**: Swap parts from different generations to create a unique 911  
 - **What-if 911 Generator**: Render and display a final composite with custom description  
-- **Export/Share Feature**: Save or share the user’s creation
+- **Export/Share Feature**: Save or share the user's creation
 
 ---
 
@@ -64,4 +64,16 @@ This project aims to build an interactive web experience titled **“Evolution o
 ```bash
 git clone https://github.com/whyyyynot/TECHIN_510.git
 cd TECHIN_510
+
+
+```
+
+---
+
+## Enhancements and Troubleshooting
+
+This project has undergone recent adjustments to improve user experience:
+
+- **Video Sound Enabled**: The `Evolution.mp4` video now plays with sound. Previously, it was muted due to the `muted` attribute in the HTML `<video>` tag. This attribute has been removed.
+- **Consistent Scroll Position**: The website is configured to always scroll to the top of the page upon refresh. This overrides default browser behavior that might restore the previous scroll position, ensuring users always start from the beginning.
 
